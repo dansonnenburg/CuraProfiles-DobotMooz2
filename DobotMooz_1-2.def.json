@@ -1,0 +1,113 @@
+{
+    "version": 2,
+    "name": "Mooz 1 or 2",
+    "inherits": "fdmprinter",
+    "metadata": {
+        "visible": true,
+        "author": "Dan Sonnenburg",
+        "manufacturer": "Dobot",
+        "category": "Custom",
+        "file_formats": "text/x-gcode",
+        "has_materials": true,
+        "machine_extruder_trains":
+        {
+            "0": "custom_extruder_1",
+            "1": "custom_extruder_2",
+            "2": "custom_extruder_3",
+            "3": "custom_extruder_4",
+            "4": "custom_extruder_5",
+            "5": "custom_extruder_6",
+            "6": "custom_extruder_7",
+            "7": "custom_extruder_8"
+        },
+        "first_start_actions": ["MachineSettingsAction"]
+    },
+    "overrides": {
+        "machine_width": {
+            "default_value": 130
+        },
+        "machine_height": {
+            "default_value": 130
+        },
+        "machine_depth": {
+            "default_value": 134
+        },
+        "machine_head_polygon": {
+            "default_value": [
+                [-30, 34],
+                [-30, -32],
+                [30, -32],
+                [30, 34]
+            ]
+        },
+        "material_diameter": {
+            "default_value": 1.75
+        },
+        "machine_nozzle_size": {
+            "default_value": 0.4
+        },
+        "layer_height_0": {
+            "default_value": 0.2
+        },
+        "top_bottom_thickness": {
+            "default_value": 0.6
+        },
+        "top_bottom_pattern": {
+            "default_value": "concentric"
+        },
+        "infill_pattern": {
+            "value": "'triangles'"
+        },
+        "retraction_enable": {
+            "default_value": true
+        },
+        "retraction_amount": {
+            "default_value": 5
+        },
+        "retraction_speed": {
+            "default_value": 40
+        },
+        "cool_min_layer_time": {
+            "default_value": 10
+        },
+        "adhesion_type": {
+            "default_value": "skirt"
+        },
+        "skirt_line_count": {
+            "default_value": 4
+        },
+        "skirt_gap": {
+            "default_value": 5
+        },
+		"machine_start_gcode" : {
+			"default_value" : "G28 ;Home\nG1 Z15.0 F1800 ;Move the platform down 15mm\n;Prime the extruder\nG92 E0\nG1 F200 E3\nG92 E0"
+		},
+        "machine_end_gcode": {
+            "default_value": "M104 S0\nM140 S0\n;Retract the filament\nG92 E1\nG1 E-1 F300\nG28\nM84"
+        },
+        "machine_heated_bed": {
+            "default_value": true
+        },
+        "gantry_height": {
+            "default_value": 99999999999
+        },
+        "acceleration_enabled": {
+            "default_value": true
+        },
+        "acceleration_print": {
+            "default_value": 500
+        },
+        "acceleration_travel": {
+            "default_value": 500
+        },
+        "jerk_enabled": {
+            "default_value": true
+        },
+        "jerk_print": {
+            "default_value": 20
+        },
+        "jerk_travel": {
+            "default_value": 20
+        }
+    }
+}
